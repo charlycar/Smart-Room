@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+  <!-- title and meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1.0" name="viewport">
+
+  <title>[ Smart Room ]</title>
+
+  <!-- js -->
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrapValidator.js"></script>
+  <script src="js/datos.js"></script>
+  <script>
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+  </script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+  <link rel="stylesheet" href="css/bootstrap.css">  
+  <link rel="stylesheet" href="css/bootstrapValidator.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<main>
+      
+      <section id="intro" class="module parallax parallax-1">
+        <center>
+          <div class="col-xs-12" style="margin-top:200px; margin-bottom:50px; color: white;">
+            <img src="img/logo_SM_b.png" class="img-responsive">
+          </div>
+          
+        </center>
+      </section>
+
+      <section class="module content">
+        <div class="row-fluid">
+            <center>
+              <a href="#info1"><button type="submit" class="btn btn-primary">Descubre SmartRoom</button></a>
+              <a href="#login"><button type="submit" class="btn btn-info">Login</button></a>
+            </center>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-2">
+        <center>
+            <h1>TRANQUIlIDAD</h1>
+        </center>
+      </section>
+
+      <section id="info1" class="module content">
+        <div class="container">
+          <center>
+              <a href="#intro"><img src="img/up.png" class="img-responsive" style="width:50px"></a>
+                <div class="col-lg-12 visible-lg" style="margin-top:130px; margin-bottom:130px;">
+                          <div class="col-lg-6">
+                     <img src="img/casa_remota.png" class="img-responsive">
+                  </div>
+                  <div class="col-md-6" style="margin-top:-20px;">
+                     <br/><br/><h2>Control sobre todo lo que te importa</h2>
+                           <p>Datos como la temperatura o la humedad los tendrás monitorizados en todo momento con Smart Room. Además podrás saber qué habitaciones están ocupadas gracias a sus sensores.</p>
+                      </div>
+                </div>
+                <div class="col-md-12 visible-md" style="margin-top:130px; margin-bottom:130px;">
+                          <div class="col-md-6">
+                     <img src="img/casa_remota.png" class="img-responsive">
+                  </div>
+                  <div class="col-md-6" style="margin-top:0px;">
+                     <h2>Control sobre todo lo que te importa</h2>
+                           <p>Datos como la temperatura o la humedad los tendrás monitorizados en todo momento con Smart Room. Además podrás saber qué habitaciones están ocupadas gracias a sus sensores.</p>
+                      </div>
+                </div>
+                <div class="col-xs-12 visible-xs visible-sm" style="margin-top:50px; margin-bottom:50px;">
+                          <img src="img/casa_remota.png" class="img-responsive">
+                  <h2 style="margin-top:50px;">Control sobre todo lo que te importa</h2>
+                        <p>Datos como la temperatura o la humedad los tendrás monitorizados en todo momento con Smart Room. Además podrás saber qué habitaciones están ocupadas gracias a sus sensores.</p>
+                    </div>
+                  <a href="#app"><img src="img/down.png" class="img-responsive" style="width:50px"></a>
+                </center>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-3">
+        <div class="container">
+          <h1>COMODIDAD</h1>
+        </div>
+      </section>
+
+      <section id="app" class="module content">
+        <div class="container">
+          <center>
+            <a href="#info1"><img src="img/up.png" class="img-responsive" style="width:50px"></a>
+        <div class="col-md-12 hidden-xs hidden-sm" style="margin-top:130px; margin-bottom:130px; ">
+                  <div class="col-md-6">
+             <img src="img/dispositivos.png" class="img-responsive">
+          </div>
+          <div class="col-md-6">
+             <br/><br/><br/><h2>En cualquier momento, en cualquier lugar</h2>
+                   <br/><p>Con la aplicación de Smart Room podrás controlar cada dato de los sensores desde cualquier dispositivo.</p>
+              </div>
+        </div>
+        <div class="col-xs-12 visible-xs visible-sm" style="margin-top:50px; margin-bottom:50px;">
+                  <img src="img/dispositivos.png" class="img-responsive">
+          <h2>En cualquier momento, en cualquier lugar</h2>
+                <p>Con la aplicación de Smart Room podrás controlar cada dato de los sensores desde cualquier dispositivo.</p>
+            </div>
+          <a href="#share"><img src="img/down.png" class="img-responsive" style="width:50px"></a>
+          </center>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-4">
+        <center>
+            <h1>COMPARTE</h1>
+        </center>
+      </section>
+
+      <section id="share" class="module content">
+        <div class="container">
+          <center>
+              <a href="#app"><img src="img/up.png" class="img-responsive" style="width:50px"></a>
+                <div class="col-lg-12 visible-lg" style="margin-top:130px; margin-bottom:130px;">
+                          <div class="col-lg-6">
+                     <img src="img/share.png" class="img-responsive">
+                  </div>
+                  <div class="col-md-6" style="margin-top:-20px;">
+                     <br/><br/><h2>Comparte los datos</h2>
+                           <p>Desde tu página personal podrás compartir los datos instantaneamente con quien quieras.</p>
+                      </div>
+                </div>
+                <div class="col-md-12 visible-md" style="margin-top:130px; margin-bottom:130px;">
+                          <div class="col-md-6">
+                     <img src="img/share.png" class="img-responsive">
+                  </div>
+                  <div class="col-md-6" style="margin-top:0px;">
+                     <h2>Comparte los datos</h2>
+                           <p>Desde tu página personal podrás compartir los datos instantaneamente con quien quieras.</p>
+                      </div>
+                </div>
+                <div class="col-xs-12 visible-xs visible-sm" style="margin-top:50px; margin-bottom:50px;">
+                          <img src="img/share.png" class="img-responsive">
+                  <h2 style="margin-top:50px;">Comparte los datos</h2>
+                        <p>Desde tu página personal podrás compartir los datos instantaneamente con quien quieras.</p>
+                    </div>
+                  <a href="#login"><img src="img/down.png" class="img-responsive" style="width:50px"></a>
+                </center>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-5">
+        <center>
+          <h1>EMPIEZA</h1>
+        </center>
+      </section>
+
+      <section id="login" class="module content" style="background-image: url("../img/LastHope-Stock_1400.jpg");">
+        <div class="container">
+          <center>
+    <a href="#intro"><img src="img/up.png" class="img-responsive" style="width:50px"></a>
+    <div class="container" id="sha" style="margin-top:50px; margin-bottom: 50px; background-image: url('../img/LastHope-Stock_1400.jpg');">
+
+    <!--Primer bloque izquierda-->
+    <div class="row" style="padding: 30px 0pt;">
+        <!--imagen responsive-->
+        <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+          <center>
+            <img src="img/login_verde.png" class="img-responsive" style="width: 184px; margin-top:50px;">
+          </center>
+        </div>
+        <!--Texto del contenido-->
+        <div class="col-xs-12 col-sm-4">
+            <h2 class="text-center">Inicia sesión</h2>
+            <br>
+            <center><table id="t_nombre" vertical-align="center" align="center">
+              <tbody>
+                <tr>
+                    <th scope="row">Usuario</th>
+                    <td>
+                      <input id="email_login" name="name" class="form-control" style="margin-left: 20px;" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Password</th>
+                    <td>
+                      <input id="pass_login" name="name" class="form-control" style="margin-left: 20px;" type="password">
+                    </td>
+                </tr>
+              </tbody>
+          </table></center>
+          <!-- Llamamos a la función encargada de guardar el nombre tras hacer click-->    
+            
+            <center style="margin-top: 20px; ">
+              <p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cuenta">Crear Usuario</button>
+                <button id="notification-trigger" type="button" class="btn btn-info" onclick="Login()" style="margin-left:20px; padding: auto 30px auto 30px;">Enviar</button>
+              </p>
+            </center>
+      </div>
+    </div>
+</div>
+</center>
+        </div>
+      </section>
+<div class="modal fade" id="cuenta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2>Introduzca sus datos de usuario:</h2>
+      </div>
+      <div class="modal-body">
+
+        <form id="registrationForm" method="post" class="form-horizontal">
+                  <div class="form-group">
+                      <label class="col-sm-3 control-label">Nombre</label>
+                      <div class="col-sm-5">
+                          <input class="form-control" name="name" id="name" type="text">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-sm-3 control-label">Email</label>
+                      <div class="col-sm-5">
+                          <input class="form-control" name="email" id="email" type="text">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-sm-3 control-label">Password</label>
+                      <div class="col-sm-5">
+                          <input class="form-control" name="pass_pedida" id="pass_pedida" type="password">
+                      </div>
+                  </div>
+
+           <div class="form-group">
+                      <div class="col-sm-9 col-sm-offset-3">
+                          <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+                          <button type="submit" class="btn btn-default" onclick="GuardarNombre2()">Registrarse</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+    <div>
+  </div>
+
+
+</div>
+
+  </main><!-- /main -->
+
+  <footer>
+    <div class="container">
+      
+     <div class="copyright">
+        <small>
+          &copy; 2014, Gonzalo Martín y Carlos Domínguez<br>
+          <a href="www.uah.es">U A H</a>
+        </small>
+      </div>
+    </div>
+  </footer><!-- /footer -->
+  
+</div><!-- /#wrapper -->
+
+<script>
+  Validaciones();
+
+</script>
+</body>
+</html>
