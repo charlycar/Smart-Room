@@ -6,8 +6,13 @@ section.module:last-child {
 }
 section.module h2 {
   margin-bottom: 40px;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", serif;
   font-size: 30px;
+}
+section.module h1 {
+  margin-bottom: 40px;
+  font-family: "Roboto", serif;
+  font-size: 40px;
 }
 section.module p {
   margin-bottom: 40px;
@@ -32,6 +37,7 @@ section.module.parallax {
 }
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.8);
+    font-family: "Roboto", serif;
   font-size: 48px;
   line-height: 600px;
   font-weight: 700;
@@ -59,12 +65,16 @@ section.module.parallax-5 {
 @media all and (min-width: 600px) {
   section.module h2 {
     font-size: 42px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  
   }
   section.module p {
     font-size: 20px;
   }
   section.module.parallax h1 {
     font-size: 96px;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  
   }
 }
 @media all and (min-width: 960px) {

@@ -149,96 +149,12 @@ function GuardarDatos()
 			
 function GuardarNombre()  
 			{
-			expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-			if ( !expr.test(document.getElementById("email").value) )
-				alert("Error: La dirección de correo " + document.getElementById("email").value + " es incorrecta.");
-			else if(document.getElementById("pass_pedida").value.length > 4)
-			{
-				var notification = new NotificationFx({
-							 
-				    // element to which the notification will be appended
-				    // defaults to the document.body
-				    wrapper : document.body,
-				 
-				    // the message
-				    message : "<h1>Bienvenido " + localStorage["fname"] + "</h1>",
-				 
-				    // layout type: growl|attached|bar|other
-				    layout : 'bar',
-				 
-				    // effects for the specified layout:
-				    // for growl layout: scale|slide|genie|jelly
-				    // for attached layout: flip|bouncyflip
-				    // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
-				    // ...
-				    effect : 'slide',
-				 
-				    // notice, warning, error, success
-				    // will add class ns-type-warning, ns-type-error or ns-type-success
-				    type : 'error',
-				 
-				    // if the user doesn´t close the notification then we remove it 
-				    // after the following time
-				    ttl : 6000,
-				 
-				    // callbacks
-				    onClose : function() { return false; },
-				    onOpen : function() { return false; }
-					});
-
-				// show the notification
-				notification.show();
-				
-
-
-				setTimeout("window.location = 'inicio.html'", 3000);
-				localStorage.setItem("fname", document.getElementById("name").value);
-				localStorage.setItem("fpass_pedida", document.getElementById("pass_pedida").value);
-				localStorage.setItem("femail", document.getElementById("email").value);
-			}
-			else
-				alert("Error: La contraseña es poco segura");
-			}
-			
-
-
-function GuardarNombre2()  
-			{
-			var notification = new NotificationFx({
-							 
-				    // element to which the notification will be appended
-				    // defaults to the document.body
-				    wrapper : document.body,
-				 
-				    // the message
-				    message : "<h1>Bienvenido " + localStorage["fname"] + "</h1>",
-				 
-				    // layout type: growl|attached|bar|other
-				    layout : 'bar',
-				 
-				    // effects for the specified layout:
-				    // for growl layout: scale|slide|genie|jelly
-				    // for attached layout: flip|bouncyflip
-				    // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
-				    // ...
-				    effect : 'slide',
-				 
-				    // notice, warning, error, success
-				    // will add class ns-type-warning, ns-type-error or ns-type-success
-				    type : 'error',
-				 
-				    // if the user doesn´t close the notification then we remove it 
-				    // after the following time
-				    ttl : 6000,
-				 
-				    // callbacks
-				    onClose : function() { return false; },
-				    onOpen : function() { return false; }
-					});
-
-				// show the notification
-				notification.show();
-				
+			    iosOverlay({
+				    text: "<h1>Usuario creado</h1>",
+				    duration: 2e3,
+				    icon: "img/check.png"
+				});
+				$(".ui-ios-overlay").css({"background-color": "#27ae60"});	
 				localStorage.setItem("fname", document.getElementById("name").value);
 				localStorage.setItem("fpass_pedida", document.getElementById("pass_pedida").value);
 				localStorage.setItem("femail", document.getElementById("email").value);
@@ -252,43 +168,44 @@ function Login()
 				{
 					if (document.getElementById("pass_login").value == localStorage["fpass_pedida"]) 
 						{
-							var notification = new NotificationFx({
-							 
-							    // element to which the notification will be appended
-							    // defaults to the document.body
-							    wrapper : document.body,
-							 
-							    // the message
-							    message : "<h1>Bienvenido " + localStorage["fname"] + "</h1>",
-							 
-							    // layout type: growl|attached|bar|other
-							    layout : 'bar',
-							 
-							    // effects for the specified layout:
-							    // for growl layout: scale|slide|genie|jelly
-							    // for attached layout: flip|bouncyflip
-							    // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
-							    // ...
-							    effect : 'slide',
-							 
-							    // notice, warning, error, success
-							    // will add class ns-type-warning, ns-type-error or ns-type-success
-							    type : 'error',
-							 
-							    // if the user doesn´t close the notification then we remove it 
-							    // after the following time
-							    ttl : 6000,
-							 
-							    // callbacks
-							    onClose : function() { return false; },
-							    onOpen : function() { return false; }
- 							});
- 
-							// show the notification
-							notification.show();
+							var opts = {
+								lines: 13, // The number of lines to draw
+								length: 11, // The length of each line
+								width: 5, // The line thickness
+								radius: 17, // The radius of the inner circle
+								corners: 1, // Corner roundness (0..1)
+								rotate: 0, // The rotation offset
+								color: '#FFF', // #rgb or #rrggbb
+								speed: 1, // Rounds per second
+								trail: 60, // Afterglow percentage
+								shadow: false, // Whether to render a shadow
+								hwaccel: false, // Whether to use hardware acceleration
+								className: 'spinner', // The CSS class to assign to the spinner
+								zIndex: 2e9, // The z-index (defaults to 2000000000)
+								top: 'auto', // Top position relative to parent in px
+								left: 'auto' // Left position relative to parent in px
+							};
+							var target = document.createElement("div");
+							document.body.appendChild(target);
+							var spinner = new Spinner(opts).spin(target);
+							var overlay = iosOverlay({
+								text: "Cargando",
+								spinner: spinner
+							});
+
+							window.setTimeout(function() {
+								overlay.update({
+									icon: "img/check.png",
+									text: "<h1>Bienvenido " + localStorage["fname"] + "</h1>"
+								});
+							}, 2000);
+
+							window.setTimeout(function() {
+								overlay.hide();
+							}, 5e3);
 							
 
-
+							$(".ui-ios-overlay").css({"background-color": "#27ae60"});		
 							setTimeout("window.location = 'inicio.html'", 3000);
 						}
 					else
@@ -296,41 +213,12 @@ function Login()
 							document.getElementById("pass_pedida").style.color = "red";	
 							document.getElementById("pass_pedida").focus();
 							// create the notification
-							var notification = new NotificationFx({
-							 
-							    // element to which the notification will be appended
-							    // defaults to the document.body
-							    wrapper : document.body,
-							 
-							    // the message
-							    message : '<h1>Usuario o contraseña erróneos</h1>',
-							 
-							    // layout type: growl|attached|bar|other
-							    layout : 'bar',
-							 
-							    // effects for the specified layout:
-							    // for growl layout: scale|slide|genie|jelly
-							    // for attached layout: flip|bouncyflip
-							    // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
-							    // ...
-							    effect : 'slide',
-							 
-							    // notice, warning, error, success
-							    // will add class ns-type-warning, ns-type-error or ns-type-success
-							    type : 'error',
-							 
-							    // if the user doesn´t close the notification then we remove it 
-							    // after the following time
-							    ttl : 6000,
-							 
-							    // callbacks
-							    onClose : function() { return false; },
-							    onOpen : function() { return false; }
- 							});
- 
-							// show the notification
-							$(".ns-box").css({"background": "#FD5252"});
-							notification.show();
+							iosOverlay({
+							    text: "<h1>Usuario o contraseña incorrectos</h1>",
+							    duration: 2e3,
+							    icon: "img/cross.png"
+							});
+							$(".ui-ios-overlay").css({"background-color": "#FD5252"});
 						}
 				}
 				else
@@ -338,41 +226,12 @@ function Login()
 						document.getElementById("email_login").style.color = "red";	
 						document.getElementById("email_login").focus();
 						// create the notification
-						var notification = new NotificationFx({
-						 
-						    // element to which the notification will be appended
-						    // defaults to the document.body
-						    wrapper : document.body,
-						 
-						    // the message
-						    message : '<h1>Usuario o contraseña erróneos</h1>',
-						 
-						    // layout type: growl|attached|bar|other
-						    layout : 'bar',
-						 
-						    // effects for the specified layout:
-						    // for growl layout: scale|slide|genie|jelly
-						    // for attached layout: flip|bouncyflip
-						    // for other layout: boxspinner|cornerexpand|loadingcircle|thumbslider
-						    // ...
-						    effect : 'slide',
-						 
-						    // notice, warning, error, success
-						    // will add class ns-type-warning, ns-type-error or ns-type-success
-						    type : 'error',
-						 
-						    // if the user doesn´t close the notification then we remove it 
-						    // after the following time
-						    ttl : 6000,
-						 
-						    // callbacks
-						    onClose : function() { return false; },
-						    onOpen : function() { return false; }
- 						});
- 
-						// show the notification
-						$(".ns-box").css({"background": "#FD5252"});
-						notification.show();
+							iosOverlay({
+							    text: "<h1>Usuario o contraseña incorrectos</h1>",
+							    duration: 2e3,
+							    icon: "img/cross.png"
+							});
+							$(".ui-ios-overlay").css({"background-color": "#FD5252"});
 				}
 				
 
@@ -437,9 +296,16 @@ function Validaciones (){
 
 function Hovers(){
 	$(document).ready(function(){
+  		$("#temp").image("sea_shell.jpg", {transformation: [
+  {width: 400, crop: "scale"},
+  {overlay: "text:arial_60:Sea%20Shell", y: 20, gravity: "north"}
+  ]})
+
+
   		$("#temp").hover(function(){
     		$("#temp").attr('src',"img/gota_1.png");
     	},function(){
+    			$("#temp").attr('src',"img/boton_temp.png");
     			$("#temp").attr('src',"img/boton_temp.png");
   			});
 });

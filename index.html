@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
   <!-- title and meta -->
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1.0" name="viewport">
-
+  <link rel="shortcut icon" href="img/favicon.png">
   <title>[ Smart Room ]</title>
 
   <!-- js -->
   <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/datos.js" language="javascript" type="text/javascript"></script>    
   <script src="js/modernizr.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="js/bootstrapValidator.js"></script>
-  <script src="js/datos.js"></script>
+  <script src="js/bootstrapValidator.min.js"></script>
+
+  <script src="js/modernizr.js"></script>
+  <script src="js/iosOverlay.js"></script>
+  <script src="js/spin.min.js"></script>
+  <script src="js/prettify.js"></script>
+  <script src="js/custom.js"></script>
   <script>
   $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
@@ -33,11 +39,14 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
   <link rel="stylesheet" href="css/bootstrap.css">  
   <link rel="stylesheet" href="css/bootstrapValidator.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css"><!-- BootstrapValidator CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/iosOverlay.css">
+  <link rel="stylesheet" href="css/prettify.css">
 
 
 </head>
@@ -81,7 +90,7 @@
                      <img src="img/casa_remota.png" class="img-responsive">
                   </div>
                   <div class="col-md-6" style="margin-top:-20px;">
-                     <br/><br/><h2>Control sobre todo lo que te importa</h2>
+                     <h2>Control sobre todo lo que te importa</h2>
                            <p>Datos como la temperatura o la humedad los tendrás monitorizados en todo momento con Smart Room. Además podrás saber qué habitaciones están ocupadas gracias a sus sensores.</p>
                       </div>
                 </div>
@@ -89,7 +98,7 @@
                           <div class="col-md-6">
                      <img src="img/casa_remota.png" class="img-responsive">
                   </div>
-                  <div class="col-md-6" style="margin-top:0px;">
+                  <div class="col-md-6" style="margin-top:-20px;">
                      <h2>Control sobre todo lo que te importa</h2>
                            <p>Datos como la temperatura o la humedad los tendrás monitorizados en todo momento con Smart Room. Además podrás saber qué habitaciones están ocupadas gracias a sus sensores.</p>
                       </div>
@@ -119,7 +128,7 @@
              <img src="img/dispositivos.png" class="img-responsive">
           </div>
           <div class="col-md-6">
-             <br/><br/><br/><h2>En cualquier momento, en cualquier lugar</h2>
+             <br/><br/><h2>En cualquier momento, en cualquier lugar</h2>
                    <br/><p>Con la aplicación de Smart Room podrás controlar cada dato de los sensores desde cualquier dispositivo.</p>
               </div>
         </div>
@@ -260,7 +269,7 @@
            <div class="form-group">
                       <div class="col-sm-9 col-sm-offset-3">
                           <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
-                          <button type="submit" class="btn btn-default" onclick="GuardarNombre2()">Registrarse</button>
+                          <button type="submit" class="btn btn-default" onclick="GuardarNombre()">Registrarse</button>
                       </div>
                   </div>
               </form>
