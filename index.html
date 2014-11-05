@@ -56,6 +56,13 @@
     });
   });
   </script>
+  <script>
+  $(document).ready(function(){
+    if ($(window).height() > 630){
+      $(".parallax-1").height($(window).height() - 92);
+    }
+  });
+  </script>
 
   <!-- css -->
   <link rel="stylesheet" href="css/bootstrap.css">  
@@ -77,7 +84,7 @@
 
 <main>
       
-      <section id="intro" class="module parallax parallax-1">
+      <section id="intro" class="module parallax parallax-1" >
         <center>
           <div class="col-xs-12" style="margin-top:200px; margin-bottom:50px; color: white;">
             <img src="img/logo_SM_b.png" class="img-responsive">
