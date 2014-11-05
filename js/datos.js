@@ -310,3 +310,22 @@ function Hovers(){
   			});
 });
 }
+
+
+function Tiempo() {
+
+	$.ajax({
+
+	  url: 'http://api.openweathermap.org/data/2.5/weather?q=Madrid&lang=sp',
+	  type: 'GET',
+	  dataType:"jsonp",
+	  success: function(data) {
+	    data.main.temp = data.main.temp - 273.15;
+	    document.getElementById("demo").innerHTML = "<img src='img/icon/" + data.weather[0].icon + ".png' style='width: 100px'/>" +
+	                                                "<br/>Ciudad: " + data.name +
+	                                                "<br/>Condiciones: " + data.weather[0].description +
+	                                                "<br/>Temperatura: " + data.main.temp.toFixed(2) + " ºC" + 
+	                                                "<br/>Humedad: " + data.main.humidity + " %";
+	  }
+	});
+}
