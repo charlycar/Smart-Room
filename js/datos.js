@@ -329,3 +329,37 @@ function Tiempo() {
 	  }
 	});
 }
+
+
+
+function Geolocalizacion() {
+
+	if(navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(Tiempo_coord);			// if geolocation supported, call function
+			} else {
+				$("#location-lat-long").val('Your browser doesn\'t support the geolocation api.');
+			}
+
+}
+
+function Tiempo_coord(position) {
+	var latitude		= position.coords.latitude;							// set latitude variable
+	var longitude		= position.coords.longitude;						// set longitude variable
+	
+	var latLongResponse	= 'Latitude: ' + latitude + ' / Longitude: ' + longitude;	// build string containing lat/long
+	$("#location-lat-long").val(latLongResponse);							// write lat/long string to input field
+	
+	$.ajax({
+
+	  url: 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&lang=sp',
+	  type: 'GET',
+	  dataType:"jsonp",
+	  success: function(data) {
+	    data.main.temp = data.main.temp - 273.15;
+	    document.getElementById("weather1").innerHTML = "<img src='img/icon/" + data.weather[0].icon + ".png' style='width: 50px'/>" +
+	                                                data.main.temp.toFixed() + " ºC";
+	    document.getElementById("weather2").innerHTML = "<div style='font-size:110%; color: white;'><img src='img/icon/" + data.weather[0].icon + ".png' style='width: 50px'/>" +
+	                                                data.main.temp.toFixed() + " ºC</div>";
+	  }
+	});
+}

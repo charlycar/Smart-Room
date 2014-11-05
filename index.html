@@ -20,6 +20,25 @@
   <script src="js/spin.min.js"></script>
   <script src="js/prettify.js"></script>
   <script src="js/custom.js"></script>
+  <script src="js/stickUp.js"></script>
+  <script type="text/javascript">
+    jQuery(function($) {
+      $(document).ready( function() {
+        $('.navbar-wrapper').stickUp({
+                      parts: {
+                        0: 'intro',
+                        1: 'info1',
+                        2: 'app',
+                        3: 'share',
+                        4: 'login'
+                      },
+                      itemClass: 'menuItem',
+                      itemHover: 'active',
+                      topMargin: 'auto'
+                    });
+      });
+    });
+  </script>
   <script>
   $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
@@ -47,6 +66,7 @@
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/iosOverlay.css">
   <link rel="stylesheet" href="css/prettify.css">
+  <link rel="stylesheet" href="css/stickup.css">  
 
 
 </head>
@@ -66,14 +86,38 @@
         </center>
       </section>
 
-      <section class="module content">
-        <div class="row-fluid">
-            <center>
-              <a href="#info1"><button type="submit" class="btn btn-primary">Descubre SmartRoom</button></a>
-              <a href="#login"><button type="submit" class="btn btn-info">Login</button></a>
-            </center>
-        </div>
-      </section>
+    <!-- START THE NAVBAR -->
+    <div class="navbar-wrapper">
+      <div class="row container">
+        <div class="navwrapper">
+          <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+              <div class="navbar-header  col-sm-2 ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">SmartRoom</a>
+              </div>
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav col-sm-8">
+                  <li class="menuItem active"><a href="#intro">Home</a></li>
+                  <li class="menuItem"><a href="#info1">Tranquilidad</a></li>
+                  <li class="menuItem"><a href="#app">Comodidad</a></li>
+                  <li class="menuItem"><a href="#share">Comparte</a></li>
+                  <li class="menuItem"><a href="#login">Login</a></li> 
+                  <li><div class="col-xs-12 visible-xs" id="weather1" style="text-align:center"></div></li>
+                </ul>
+                <div class="col-sm-2 hidden-xs " id="weather2" style="margin-top:-7px"></div>
+                
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div><!-- End Navbar -->
+
 
       <section class="module parallax parallax-2">
         <center>
@@ -90,7 +134,7 @@
                      <img src="img/casa_remota.png" class="img-responsive">
                   </div>
                   <div class="col-md-6" style="margin-top:-20px;">
-                     <h2>Control sobre todo lo que te importa</h2>
+                     <h2></div>Control sobre todo lo que te importa</h2>
                            <p>Datos como la temperatura o la humedad los tendrás monitorizados en todo momento con Smart Room. Además podrás saber qué habitaciones están ocupadas gracias a sus sensores.</p>
                       </div>
                 </div>
@@ -298,7 +342,7 @@
 
 <script>
   Validaciones();
-
+  Geolocalizacion();
 </script>
 </body>
 </html>
