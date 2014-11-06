@@ -356,9 +356,9 @@ function Tiempo_coord(position) {
 	  dataType:"jsonp",
 	  success: function(data) {
 	    data.main.temp = data.main.temp - 273.15;
-	    document.getElementById("weather1").innerHTML = "<img src='img/icon/" + data.weather[0].icon + ".png' style='width: 50px'/>" +
+	    document.getElementById("weather1").innerHTML = "<img src='icon/" + data.weather[0].icon + ".png' style='width: 50px'/>" +
 	                                                data.main.temp.toFixed() + " ºC";
-	    document.getElementById("weather2").innerHTML = "<div style='font-size:110%; color: white;'><img src='img/icon/" + data.weather[0].icon + ".png' style='width: 50px'/>" +
+	    document.getElementById("weather2").innerHTML = "<div style='font-size:110%; color: white;'><img src='icon/" + data.weather[0].icon + ".png' style='width: 50px'/>" +
 	                                                data.main.temp.toFixed() + " ºC</div>";
 	  }
 	});
